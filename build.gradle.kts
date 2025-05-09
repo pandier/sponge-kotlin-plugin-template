@@ -3,9 +3,9 @@ import org.spongepowered.plugin.metadata.model.PluginDependency
 
 plugins {
     `java-library`
-    kotlin("jvm") version "2.0.0"
+    kotlin("jvm") version "2.1.20"
     id("org.spongepowered.gradle.plugin") version "2.2.0"
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.gradleup.shadow") version "8.3.6"
 }
 
 repositories {
@@ -13,7 +13,7 @@ repositories {
 }
 
 sponge {
-    apiVersion("11.0.0")
+    apiVersion("15.0.0-SNAPSHOT")
     license("MIT")
     loader {
         name(PluginLoaders.JAVA_PLAIN)
@@ -37,7 +37,7 @@ configurations.spongeRuntime {
     resolutionStrategy {
         eachDependency {
             if (target.name == "spongevanilla") {
-                useVersion("1.20.6-11.0.0")
+                useVersion("1.21.5-15.0.0+")
             }
         }
     }
